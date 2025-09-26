@@ -1,0 +1,382 @@
+/* CSS VARIABLES & BASIC SETUP */
+:root {
+    --brand-dark: #1a1a1a;
+    --brand-dark-2: #2a2a2a;
+    /* --- UPDATED: Changed brand-green to brand-navy for accent --- */
+    --brand-navy: #0d244f; /* This is the navy from their logo */
+    --brand-light: #f4f7f6;
+    --brand-text: #cccccc;
+    --brand-text-dark: #333333;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--brand-dark);
+    color: var(--brand-text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER & NAVIGATION */
+.site-header {
+    background-color: rgba(26, 26, 26, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-menu a {
+    color: var(--brand-text);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    /* --- UPDATED: Hover color to navy --- */
+    color: var(--brand-navy);
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mobile-nav-menu {
+    display: none;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.mobile-nav-menu a {
+    display: block;
+    padding: 1rem 0;
+    color: var(--brand-text);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.mobile-nav-menu.active {
+    display: block;
+}
+
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    /* --- UPDATED: Button primary color to navy --- */
+    background-color: var(--brand-navy);
+    color: #fff;
+    border: 2px solid var(--brand-navy);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background-color: #0c1e40; /* Slightly darker navy for hover */
+}
+
+.btn-outline {
+    background-color: transparent;
+    /* --- UPDATED: Button outline color to navy --- */
+    color: var(--brand-navy);
+    border: 2px solid var(--brand-navy);
+}
+
+.btn-outline:hover {
+    /* --- UPDATED: Button outline hover color to navy --- */
+    background-color: var(--brand-navy);
+    color: #fff;
+}
+
+
+/* HERO SECTION */
+.hero-section {
+    height: calc(100vh - 70px);
+    background: url('/second-chance/images/community-building2.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.8);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin: 1rem 0 2rem;
+}
+
+/* GENERIC SECTION STYLING */
+.about-section, .services-section, .involved-section, .contact-section {
+    padding: 6rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title .subtitle {
+    font-family: var(--font-heading);
+    /* --- UPDATED: Subtitle color to navy --- */
+    color: var(--brand-navy);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.section-title h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* ABOUT SECTION */
+.about-section {
+    background-color: var(--brand-light);
+    color: var(--brand-text-dark);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.about-image img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* SERVICES & INVOLVED SECTIONS */
+.services-section {
+    background-color: var(--brand-dark-2);
+}
+.services-section .section-title h2 {
+    color: #fff;
+}
+
+.services-grid, .involved-grid {
+    display: grid;
+    gap: 2rem;
+}
+.services-grid { grid-template-columns: repeat(4, 1fr); }
+.involved-grid { grid-template-columns: repeat(3, 1fr); }
+
+
+/* --- NEW/UPDATED: Service Item Styling --- */
+.service-item, .involved-item {
+    text-align: center;
+    padding: 1.5rem; /* Increased padding slightly */
+    border: 1px solid #444; /* Default border */
+    border-radius: 5px; /* Subtle rounded corners */
+    background-color: var(--brand-dark-2); /* Ensure background for hover contrast */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.service-item:hover, .involved-item:hover {
+    border-color: var(--brand-navy); /* Border color on hover */
+    background-color: #333; /* Slightly lighter dark on hover */
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3); /* Subtle shadow */
+}
+
+.service-item i, .involved-item i {
+    font-size: 2.5rem;
+    /* --- UPDATED: Icon color to navy --- */
+    color: var(--brand-navy);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+
+.service-item:hover i, .involved-item:hover i {
+    /* Optional: make icon brighter on hover */
+    color: #fff;
+}
+
+.service-item h3, .involved-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #fff; /* Ensure text is white on dark background */
+}
+.services-section .service-item p { color: #aaa; }
+
+
+.involved-section {
+    background-color: var(--brand-light);
+    color: var(--brand-text-dark);
+}
+.involved-section .involved-item {
+    background-color: #fff; /* White background for items in light section */
+    border: 1px solid #ddd;
+}
+.involved-section .involved-item h3 {
+    color: var(--brand-text-dark); /* Dark text on light background */
+}
+.involved-section .involved-item p {
+    color: #555;
+}
+.involved-section .involved-item:hover {
+    border-color: var(--brand-navy);
+    background-color: #fcfcfc;
+}
+
+
+/* CONTACT SECTION */
+.contact-section {
+    background-color: var(--brand-dark-2);
+}
+.contact-section .section-title h2 { color: #fff; }
+.contact-section .section-title p { color: #aaa; }
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.form-group-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--brand-dark);
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 2px;
+}
+.contact-form textarea {
+    margin-bottom: 1.5rem;
+}
+.contact-form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+.site-footer-bottom {
+    background-color: var(--brand-dark);
+    padding: 3rem 0;
+    text-align: center;
+    color: #777;
+}
+.social-icons {
+    margin-bottom: 1.5rem;
+}
+.social-icons a {
+    color: #777;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+.social-icons a:hover {
+    /* --- UPDATED: Social icon hover color to navy --- */
+    color: var(--brand-navy);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .nav-menu { display: none; }
+    .nav-toggle { display: block; }
+
+    .hero-content h1 { font-size: 2.5rem; letter-spacing: 0.2rem; }
+    .hero-content p { font-size: 1rem; }
+    
+    .section-title h2 { font-size: 2.2rem; }
+
+    .about-content { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .involved-grid { grid-template-columns: 1fr; }
+    .form-group-split { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 500px) {
+    .services-grid { grid-template-columns: 1fr; }
+}
